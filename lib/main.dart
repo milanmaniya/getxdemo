@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getxdemo/counter_app/counter_ui.dart';
 import 'package:getxdemo/init.controller.dart';
 import 'package:getxdemo/radio_checkbox/ui.dart';
 
