@@ -45,22 +45,56 @@ class Ui extends StatelessWidget {
           Row(
             children: [
               const Text('Hobby: '),
-              Checkbox(
-                value: uiController.checkBoxValue[0],
-                onChanged: (value) {},
+              Obx(
+                () => Checkbox(
+                  value: uiController.checkBoxValue[0],
+                  onChanged: (value) {
+                    uiController.changeHobby(0, value!);
+                    log(uiController.checkBoxValue.string);
+                  },
+                ),
               ),
               const Text('Reading'),
-              Checkbox(
-                value: uiController.checkBoxValue[1],
-                onChanged: (value) {},
+              Obx(
+                () => Checkbox(
+                  value: uiController.checkBoxValue[1],
+                  onChanged: (value) {
+                    uiController.changeHobby(1, value!);
+                    log(uiController.checkBoxValue.string);
+                  },
+                ),
               ),
               const Text('Football'),
-              Checkbox(
-                value: uiController.checkBoxValue[2],
-                onChanged: (value) {},
+              Obx(
+                () => Checkbox(
+                  value: uiController.checkBoxValue[2],
+                  onChanged: (value) {
+                    uiController.changeHobby(2, value!);
+                    log(uiController.checkBoxValue.string);
+                  },
+                ),
               ),
               const Text('Music'),
             ],
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          Obx(
+            () => ElevatedButton(
+              onPressed: () {
+                uiController.isPressed.value = true;
+              },
+              child: const Text('Submit'),
+            ),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          Text(
+            uiController.isPressed.value == true
+                ? '${uiController.gender.value} /n ${uiController.checkBoxValue.string}'
+                : 'Value Not Found',
           ),
         ],
       ),
