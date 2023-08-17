@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getxdemo/crud_example/crud_form_ui.dart';
 import 'package:getxdemo/init.controller.dart';
+import 'package:getxdemo/tic_tac_toe/tic_tac_toe_ui.dart';
 
 void main() {
   InitController.getAllController;
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const CrudFormUi(),
+      home: const TicTacToeUi(),
     );
   }
 }
