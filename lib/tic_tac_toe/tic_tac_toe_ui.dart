@@ -139,60 +139,58 @@ class TicTacToeUi extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          Obx(
-            () => Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                ElevatedButton(
-                  style: ButtonStyle(
-                    elevation: MaterialStateProperty.all(7),
-                    minimumSize: MaterialStateProperty.all(const Size(150, 50)),
-                    backgroundColor:
-                        MaterialStateProperty.all(Colors.grey.shade300),
-                  ),
-                  onPressed: () {
-                    ticTacToeController.clearControl();
-                  },
-                  child: const Text(
-                    'Reset',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              ElevatedButton(
+                style: ButtonStyle(
+                  elevation: MaterialStateProperty.all(7),
+                  minimumSize: MaterialStateProperty.all(const Size(150, 50)),
+                  backgroundColor:
+                      MaterialStateProperty.all(Colors.grey.shade300),
                 ),
-                Text(
-                  ticTacToeController.isActivated.value
-                      ? ticTacToeController.player1.string
-                      : ticTacToeController.player2.string,
-                  style: const TextStyle(
-                    fontSize: 20,
+                onPressed: () {
+                  ticTacToeController.clearControl();
+                },
+                child: const Text(
+                  'Reset',
+                  style: TextStyle(
+                    fontSize: 16,
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                ElevatedButton(
-                  style: ButtonStyle(
-                    elevation: MaterialStateProperty.all(7),
-                    minimumSize: MaterialStateProperty.all(const Size(150, 50)),
-                    backgroundColor:
-                        MaterialStateProperty.all(Colors.grey.shade300),
-                  ),
-                  onPressed: () {
-                    ticTacToeController.clearControl();
-                  },
-                  child: const Text(
-                    'Restart',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                    ),
+              ),
+              Text(
+                ticTacToeController.isActivated.value
+                    ? ticTacToeController.player1.string
+                    : ticTacToeController.player2.string,
+                style: const TextStyle(
+                  fontSize: 20,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              ElevatedButton(
+                style: ButtonStyle(
+                  elevation: MaterialStateProperty.all(7),
+                  minimumSize: MaterialStateProperty.all(const Size(150, 50)),
+                  backgroundColor:
+                      MaterialStateProperty.all(Colors.grey.shade300),
+                ),
+                onPressed: () {
+                  ticTacToeController.clearControl();
+                },
+                child: const Text(
+                  'Restart',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ],
       ),
